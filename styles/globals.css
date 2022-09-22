@@ -6,6 +6,9 @@
   .Btn {
     @apply w-6 h-6 shrink-0 cursor-pointer;
   }
+  .customfont {
+    @apply font-bold text-sm leading-[18px];
+  }
 }
 
 html,
