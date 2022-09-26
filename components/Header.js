@@ -10,7 +10,14 @@ import discover from "../assets/discover.png";
 import hearth from "../assets/hearth.png";
 import profile from "../assets/profile.jpg";
 
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalState";
+
 const Header = () => {
+  const [open, setOpen] = useRecoilState(modalState);
+
+  console.log(open);
+
   return (
     <div className="border-b shadow-sm bg-white sticky top-0 z-10">
       <div className="flex justify-between items-center h-16 px-2 max-w-5xl mx-auto">
@@ -45,7 +52,7 @@ const Header = () => {
               1
             </div>
           </div>
-          <div className="Btn">
+          <div className="Btn" onClick={() => setOpen(!open)}>
             <Image src={upload} />
           </div>
           <div className="Btn hidden sm:flex">
